@@ -1,9 +1,9 @@
 # Documentação do Software
 
-##Visão Geral
+# Visão Geral
 Este software implementa um sistema de enquetes com a capacidade de criar, visualizar, remover e votar em opções de enquetes. A aplicação foi construída usando o framework Spring Boot e segue uma arquitetura MVC (Model-View-Controller). Ele utiliza o padrão REST para fornecer endpoints acessíveis por meio de requisições HTTP.
 
-#EnqueteController
+# EnqueteController
 Métodos
 1. listAll()
 Descrição: Retorna todas as enquetes cadastradas.
@@ -49,7 +49,9 @@ Parâmetro Path: enqueteID - ID da enquete à qual a opção pertence.
 Parâmetro Path: opcaoID - ID da opção que receberá o voto.
 Resposta Sucesso: 200 OK - Retorna a enquete atualizada após a adição do voto.
 Resposta Falha: 400 Bad Request - Caso haja algum problema na adição do voto.
+
 ##EnqueteServiceImpl
+
 Métodos
 1. findById(Long id)
 Descrição: Retorna uma enquete com base no ID fornecido.
@@ -92,26 +94,38 @@ Exceção: NullPointerException - Caso a enquete com o ID especificado não seja
 Descrição: Retorna todas as enquetes cadastradas.
 Retorno: Lista de objetos Enquete.
 Entidades
-##1. Enquete
+
+# 1. Enquete
+
 Atributos:
 id - Identificador único da enquete.
 nomeEnquete - Nome da enquete.
 opcoes - Lista de opções associadas à enquete.
-##2. EnqueteDto
+
+# 2. EnqueteDto
+
 Atributos:
 nome - Nome da enquete.
 opcoes - Lista de opções associadas à enquete.
-##3. OpcaoDto
+
+# 3. OpcaoDto
+
 Atributos:
 nome - Nome da opção.
-##4. Opcao
+
+# 4. Opcao
+
 Atributos:
 id - Identificador único da opção.
 nome - Nome da opção.
 qntVotos - Quantidade de votos recebidos pela opção.
-##Repositórios
+
+# Repositórios
+
 EnqueteRepository: Responsável pelo acesso aos dados das enquetes.
 OpcaoRepository: Responsável pelo acesso aos dados das opções.
-##Considerações Finais
+
+# Considerações Finais
+
 Este software fornece um conjunto de APIs REST para gerenciamento de enquetes, opções e votos. Certifique-se de seguir as convenções REST ao realizar chamadas para os endpoints especificados. Além disso, as exceções NullPointerException são utilizadas para lidar com situações em que recursos não são encontrados. Certifique-se de tratar essas exceções adequadamente ao integrar ou estender este software.
 
